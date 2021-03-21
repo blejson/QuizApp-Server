@@ -17,6 +17,6 @@ public class Quiz {
     @Id
     private String id;
     private String author;
-    @OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "quiz", cascade = CascadeType.REMOVE)
     private List<Question> questions;
 }
