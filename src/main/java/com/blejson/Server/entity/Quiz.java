@@ -1,20 +1,22 @@
 package com.blejson.Server.entity;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import javax.persistence.*;
 import java.util.List;
 
 @Getter
 @Setter
-@SuperBuilder
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name="quiz")
 public class Quiz {
     @Id
     private String id;
-    @OneToMany(mappedBy = "question")
-    private List<Question> clients;
+    private String author;
+    @OneToMany(mappedBy = "quiz", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<Question> questions;
 }

@@ -21,7 +21,8 @@ public class Initializer {
     @PostConstruct
     private synchronized void init(){
         Quiz quiz = Quiz.builder()
-                .id("TEST")
+                .id("q1")
+                .author("Jacek Bleja")
                 .build();
         quizService.create(quiz);
         Question question0 = Question.builder()
@@ -54,5 +55,21 @@ public class Initializer {
         questionService.create(question0);
         questionService.create(question1);
         questionService.create(question2);
+
+        Quiz quiz1 = Quiz.builder()
+                .id("TEST1")
+                .author("Jan Nowak")
+                .build();
+        quizService.create(quiz1);
+        Question question3 = Question.builder()
+                .quiz(quiz1)
+                .question("Czy zadziała")
+                .answer0("Tak")
+                .answer1("Nie ma opcji")
+                .answer2("Raczej tak")
+                .answer3("Raczej nie")
+                .goodAnswer(1)
+                .build();
+        questionService.create(question3);
     }
 }
