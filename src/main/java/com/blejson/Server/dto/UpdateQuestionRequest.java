@@ -1,7 +1,6 @@
 package com.blejson.Server.dto;
 
 import com.blejson.Server.entity.Question;
-import com.blejson.Server.entity.Quiz;
 import lombok.*;
 
 import java.util.function.BiFunction;

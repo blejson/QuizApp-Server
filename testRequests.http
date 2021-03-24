@@ -1,0 +1,42 @@
+GET localhost:8080/api/quiz
+###
+POST localhost:8080/api/quiz
+Content-Type: application/json
+
+{
+ "id": "TEST2",
+ "author": "Jacek Blejaa"
+}
+###
+DELETE localhost:8080/api/quiz/q1
+###
+GET localhost:8080/api/quiz/q1/questions
+###
+GET localhost:8080/api/quiz/q1/questions/1
+###
+POST localhost:8080/api/quiz/q1/questions
+Content-Type: application/json
+
+{
+  "question": "111111Ile mam lat?",
+  "answer0": "111118",
+  "answer1": "111120",
+  "answer2": "111122",
+  "answer3": "111124",
+  "goodAnswer": 2
+}
+###
+DELETE localhost:8080/api/quiz/q1/questions/1
+###
+PUT localhost:8080/api/quiz/q1/questions/3
+Content-Type: application/json
+
+{
+  "question": "111111Ile mam lat?",
+  "answer0": "111118",
+  "answer1": "111120",
+  "answer2": "111122",
+  "answer3": "111124",
+  "goodAnswer": 2
+}
+###
