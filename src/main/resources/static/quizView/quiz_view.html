@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module" src="quiz_view.js" defer="defer"></script>
+</head>
+<body>
+<section class="main-section">
+    <article class="text--justified">
+        <header><h2 id="idd">id</h2></header>
+        <section>
+            <h3>Details</h3>
+            <div class="details-grid">
+                <label for="id">Name:</label><span id="id">id</span>
+                <label for="author">Author:</label><span id="author">author</span>
+            </div>
+        </section>
+        <section>
+            <h3>Questions</h3>
+            <table class="data-table">
+                <thead>
+                <tr>
+                    <th>question</th>
+                    <th>answer0</th>
+                    <th>answer1</th>
+                    <th>answer2</th>
+                    <th>answer3</th>
+                    <th>goodAnswer</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+                </thead>
+                <tbody id="tableBody">
+                <tr>
+                    <td>question</td>
+                    <td>answer0</td>
+                    <td>answer1</td>
+                    <td>answer2</td>
+                    <td>answer3</td>
+                    <td>goodAnswer</td>
+                    <td><a href="#">view</a></td>
+                    <td>
+                        <button class="ui-button ui-control">delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody id="link">
+                <td><a href="#">Add new</a></td>
+                </tbody>
+            </table>
+        </section>
+    </article>
+</section>
+
+<footer class="footer">
+    <p>Copyright &copy; 2021, Jacek Bleja</p>
+</footer>
+</body>
+</html>

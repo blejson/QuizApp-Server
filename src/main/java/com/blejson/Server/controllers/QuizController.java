@@ -1,6 +1,7 @@
 package com.blejson.Server.controllers;
 
 import com.blejson.Server.dto.CreateQuizRequest;
+import com.blejson.Server.dto.GetQuizResponse;
 import com.blejson.Server.dto.GetQuizzesResponse;
 import com.blejson.Server.entity.Quiz;
 import com.blejson.Server.services.QuizService;
@@ -29,7 +30,12 @@ public class QuizController {
         GetQuizzesResponse response = mapper.apply(quizzes);
         return ResponseEntity.ok(response);
     }
-
+    @GetMapping("{id}")
+    public ResponseEntity<GetQuizResponse> getQuiz(@PathVariable("id") String id){
+        Optional<Quiz> quiz = quizService.findById(id);
+        return quiz.map(value -> ResponseEntity.ok(GetQuizResponse.entityToDtoMapper().apply(value)))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
     @PostMapping
     public ResponseEntity<Void> createQuiz(@RequestBody CreateQuizRequest request, UriComponentsBuilder builder){
         Quiz quiz = CreateQuizRequest
