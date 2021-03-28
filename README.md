@@ -21,6 +21,7 @@ docker build -f Dockerfile -t quiz-app .
 ```shell
 docker run -p 8080:8080 quiz-app
 ```
+Site is available at localhost:8080
 
 [shield-java]: https://img.shields.io/badge/Java-15-blue.svg
 [shield-spring-boot]: https://img.shields.io/badge/Spring_Boot-2.4.4-blue.svg
